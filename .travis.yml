@@ -13,11 +13,8 @@ after_success:
     - docker build -t sesikanth/multi-ngnix  ./ngnix
     - docker build -t sesikanth/multi-server  ./server
     - docker build -t sesikanth/multi-worker  ./worker
-    
-#Log into docker cli
-echo "$docker_password" | docker login -u "$docker_id" --password-stdin
-#Push to docker hub
-docker push sesikanth/multi-client
-docker push sesikanth/multi-ngnix
-docker push sesikanth/multi-server
-docker push sesikanth/multi-worker
+    - echo "$docker_password" | docker login -u "$docker_id" --password-stdin
+    - docker push sesikanth/multi-client
+    - docker push sesikanth/multi-ngnix
+    - docker push sesikanth/multi-server
+    - docker push sesikanth/multi-worker
