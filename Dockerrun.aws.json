@@ -24,13 +24,13 @@
         {
             "name":"worker",
             "image":"sesikanth/multi-worker",
-            "essential":false,
-            "memory": 128
+            "memory": 128,
+            "essential":true
         },
         {
             "name":"ngnix",
             "image":"sesikanth/multi-ngnix",
-            "essential":true,
+            "essential":false,
             "portMappings": [
                 {
                     "hostPort":80,
