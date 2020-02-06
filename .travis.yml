@@ -15,18 +15,6 @@ after_success:
     - docker build -t sesikanth/multi-worker  ./worker
     - echo "$docker_password" | docker login -u "$docker_id" --password-stdin
     - docker push sesikanth/multi-client
-    - docker push sesikanth/multi-ngnix
+    - docker push sesikanth/multi-nginx
     - docker push sesikanth/multi-server
     - docker push sesikanth/multi-worker
-deploy:
-    provider: elasticbeanstalk
-    region: "us-east-2"
-    app: "multi-dock"
-    env: "MultiDock-env"
-    bucket_name: "elasticbeanstalk-us-east-2-738672325558"
-    bucket_path: "docker-react"
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: 
-        secure: "$AWS_SECRET_KEY"
-    on:
-        branch: master
