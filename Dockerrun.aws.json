@@ -23,7 +23,7 @@
         },
         {
             "name":"nginx",
-            "image":"sesikanth/multi-ngnix",
+            "image":"sesikanth/multi-nginx",
             "essential":true,
             "portMappings": [
                 {
