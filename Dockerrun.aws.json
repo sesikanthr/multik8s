@@ -13,24 +13,18 @@
             "image":"sesikanth/multi-server",
             "hostName":"api",
             "essential":false,
-            "memory": 128,
-            "portMappings": [
-                {
-                    "hostPort":8081,
-                    "containerPort":5000
-                }
-            ]
+            "memory": 128
         },
         {
             "name":"worker",
             "image":"sesikanth/multi-worker",
-            "memory": 128,
-            "essential":true
+            "essential":false,
+            "memory": 128
         },
         {
-            "name":"ngnix",
+            "name":"nginx",
             "image":"sesikanth/multi-ngnix",
-            "essential":false,
+            "essential":true,
             "portMappings": [
                 {
                     "hostPort":80,

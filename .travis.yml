@@ -10,7 +10,7 @@ scripts:
 
 after_success:
     - docker build -t sesikanth/multi-client  ./client
-    - docker build -t sesikanth/multi-ngnix  ./ngnix
+    - docker build -t sesikanth/multi-nginx  ./nginx
     - docker build -t sesikanth/multi-server  ./server
     - docker build -t sesikanth/multi-worker  ./worker
     - echo "$docker_password" | docker login -u "$docker_id" --password-stdin
