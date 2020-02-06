@@ -4,14 +4,14 @@
         {
             "name":"client",
             "image":"sesikanth/multi-client",
-            "hostName":"client",
+            "hostname":"client",
             "essential":false,
             "memory": 128
         },
         {
             "name":"server",
             "image":"sesikanth/multi-server",
-            "hostName":"api",
+            "hostname":"api",
             "essential":false,
             "memory": 128
         },
