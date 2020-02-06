@@ -1,0 +1,34 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name":"client",
+            "image":"sesikanth/multi-client",
+            "hostName":"client",
+            "essential":false
+        },
+        {
+            "name":"server",
+            "image":"sesikanth/multi-server",
+            "hostName":"api",
+            "essential":false
+        },
+        {
+            "name":"worker",
+            "image":"sesikanth/multi-worker",
+            "essential":false
+        },
+        {
+            "name":"ngnix",
+            "image":"sesikanth/multi-ngnix",
+            "essential":true,
+            "portMappings": [
+                {
+                    "hostPort":80,
+                    "containerPort":80
+                }
+            ],
+            "links":["client", "server"]
+        }
+    ]
+}
