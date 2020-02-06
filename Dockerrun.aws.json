@@ -38,6 +38,7 @@
                 }
             ],
             "links":["client", "server"],
+            "memory": 128,
             "dependsOn": [
                 {
                   "containerName": "server",
