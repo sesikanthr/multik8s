@@ -38,17 +38,7 @@
                 }
             ],
             "links":["client", "server"],
-            "memory": 128,
-            "dependsOn": [
-                {
-                  "containerName": "server",
-                  "condition": "HEALTHY"
-                },
-                {
-                    "containerName": "client",
-                    "condition": "HEALTHY"
-                  }
-              ]
+            "memory": 128
         }
     ]
 }
