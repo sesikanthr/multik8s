@@ -37,7 +37,17 @@
                     "containerPort":80
                 }
             ],
-            "links":["client", "server"]
+            "links":["client", "server"],
+            "dependsOn": [
+                {
+                  "containerName": "server",
+                  "condition": "HEALTHY"
+                },
+                {
+                    "containerName": "client",
+                    "condition": "HEALTHY"
+                  }
+              ]
         }
     ]
 }
