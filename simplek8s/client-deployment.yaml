@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: client-deployment
+spec:
+    replicas: 2
+    selector:
+        matchLabels:
+            component: webinf
+    template:
+        metadata:
+            labels: 
+                component: webinf
+        spec:
+            containers:
+                - name: client
+                  image: sesikanth/multi-client
+                  ports:
+                    - containerPort: 9999
+
+        

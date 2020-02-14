@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: client-pod
+    labels:
+        app: webinf
+spec:
+    containers:
+      - name: client
+        image: sesikanth/multi-worker
+        ports:
+          - containerPort: 3000
+
