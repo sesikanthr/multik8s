@@ -27,6 +27,11 @@ spec:
                         secretKeyRef:
                             name: pgpassword
                             key: PGPASSWORD
+                    - name: POSTGRES_PASSWORD
+                      valueFrom:
+                      secretKeyRef:
+                          name: pgpassword
+                          key: PGPASSWORD
                   volumeMounts:
                     - name: postgres-storage
                       mountPath: /var/lib/postgresql/data
